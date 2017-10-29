@@ -4,11 +4,10 @@
   <artifactId>DoctorWho-API</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
-   <properties>
-		<hibernate.version>4.2.21.Final</hibernate.version> <!-- La seule version de jersey compatible avec cette version de Hibernate 
-			est la version 1.8 -->
-	</properties>
-	
+   <!-- <properties>
+		<hibernate.version>4.2.21.Final</hibernate.version> 
+	</properties> -->
+	 
   <dependencies>	
     <!--Spigot API-->
     <dependency>
@@ -26,8 +25,7 @@
             <scope>provided</scope>
     </dependency>
     
-    		<!-- Hibernate library -->
-		<dependency>
+    		<!-- <dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
 			<version>${hibernate.version}</version>
@@ -39,7 +37,6 @@
 			<version>${hibernate.version}</version>
 		</dependency>
 
-		<!-- Required By Hibernate -->
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
@@ -52,12 +49,11 @@
 			<version>3.12.1.GA</version>
 		</dependency>
 
-		<!-- MySQL driver connector library -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.38</version>
-		</dependency>
+		</dependency> -->
  </dependencies>
  
 	<build>
