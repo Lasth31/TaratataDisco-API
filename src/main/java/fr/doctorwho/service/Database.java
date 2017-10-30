@@ -34,10 +34,10 @@ public class Database extends SQLConnection implements Runnable{
 	}
 	
 	
-	public int getAllID(String table){
+	public int getAllID(String table,String nameID){
 		int value = 0;
 		try{
-			PreparedStatement ps = prepareStatement("SELECT id FROM " + table);
+			PreparedStatement ps = prepareStatement("SELECT " + nameID + " FROM " + table);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
 				value = rs.getInt("id");

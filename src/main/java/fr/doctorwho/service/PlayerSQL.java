@@ -44,7 +44,7 @@ public class PlayerSQL{
 			return;
 		try {
 			PreparedStatement p = API.getDatabase().prepareStatement("INSERT INTO players(userID,uuid,pseudo) VALUES (?,?,?)");
-			p.setInt(1, API.getDatabase().getAllID("players") + 1);
+			p.setInt(1, API.getDatabase().getAllID("players","userID") + 1);
 			p.setString(2, player.getUniqueId().toString());
 			p.setString(3, player.getName());
 			p.execute();

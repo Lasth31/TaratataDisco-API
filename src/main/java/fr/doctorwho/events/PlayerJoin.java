@@ -18,6 +18,6 @@ public class PlayerJoin implements Listener {
 		PlayerSQL playersql = PlayerSQL.getPlayerSQL(player);
 		PlayerSQL.playersql.put(player, playersql);
 		
-		event.setJoinMessage(EnumPrefix.DOCTORWHORP + "§b" + playersql.getRank().getRankPrefix() + " " + player.getName() + " à rejoint le serveur");
+		event.setJoinMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§b" + playersql.getRank().getRankPrefix() + " " + player.getName() + " à rejoint le serveur");
 	}
 }

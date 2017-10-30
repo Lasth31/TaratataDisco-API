@@ -23,14 +23,14 @@ public class MoneyCommand implements CommandExecutor {
 		}
 		
 		if(args.length == 0){
-			player.sendMessage(EnumPrefix.DOCTORWHORP + "§7Vous avez " + PlayerSQL.getPlayerSQL(player) + "£");
+			player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§7Vous avez " + PlayerSQL.getPlayerSQL(player).getCoins() + "£");
 			return true;
 		}
 		
 		if(args.length == 3){
 			// Detect IF Player is Admin
 			if(PlayerSQL.playersql.get(player) == null || PlayerSQL.playersql.get(player).getRank() != EnumRank.ADMINISTRATEUR){
-				player.sendMessage(EnumPrefix.DOCTORWHORP + "§4Vous n'avez pas la permission de exécuter la commande");
+				player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§4Vous n'avez pas la permission de exécuter la commande");
 				return true;
 			}
 			
@@ -40,28 +40,30 @@ public class MoneyCommand implements CommandExecutor {
 			
 			
 			if(target == null || playersql == null){
-				player.sendMessage(EnumPrefix.DOCTORWHORP + "§4Le joueur n'existe pas");
+				player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§4Le joueur n'existe pas");
 				return true;
 			}
 			
 			if(amount == 0){
-				player.sendMessage(EnumPrefix.DOCTORWHORP + "§4Vous ne pouvez pas mettre 0");
+				player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§4Vous ne pouvez pas mettre 0");
 				return true;
 			}
 			
 			if(args[0].equalsIgnoreCase("add")) {
 				playersql.addCoins(amount);
-				player.sendMessage(EnumPrefix.DOCTORWHORP + "§aVous avez rajouté " + amount + "£ à votre compte");
-				target.sendMessage(EnumPrefix.DOCTORWHORP + "§Le joueur " + player.getName() + " vous a rajouté " + amount + "£ à votre compte");
+				player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aVous avez rajouté " + amount + "£ à votre compte");
+				target.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§Le joueur " + player.getName() + " vous a rajouté " + amount + "£ à votre compte");
 				return true;
 			}
 			
 			if(args[0].equalsIgnoreCase("remove")){
 				playersql.removeCoins(Integer.parseInt(args[2]));
-				player.sendMessage(EnumPrefix.DOCTORWHORP + "§aVous avez enlevé " + amount + "£ à votre compte");
-				target.sendMessage(EnumPrefix.DOCTORWHORP + "§Le joueur " + player.getName() + " vous a enlevé " + amount + "£ à votre compte");
+				player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aVous avez enlevé " + amount + "£ à votre compte");
+				target.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aLe joueur " + player.getName() + " vous a enlevé " + amount + "£ à votre compte");
 				return true;
 			}
+			
+			playersql.update();
 		}
 		return false;
 	}

@@ -32,6 +32,7 @@ public class API extends JavaPlugin {
 		database.connect();
 		
 		registerListener();
+		registerCommand();
 	}
 	
 	@Override
