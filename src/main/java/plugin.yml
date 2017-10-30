@@ -1,0 +1,8 @@
+main: fr.doctorwho.dao.API
+name: DoctorWhoAPI
+version: 1.0 alpha
+authors: [Montras,Lasth]
+commands:
+    rank:
+        description: Vous permet de mettre les grades aux joueurs
+        aliases: grade 
