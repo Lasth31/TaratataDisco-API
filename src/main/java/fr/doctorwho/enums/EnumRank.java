@@ -95,6 +95,7 @@ public enum EnumRank {
 		return null;
 	}
 
+
 	/**
 	 * Sets rank Name
 	 * @param rankName
@@ -118,6 +119,5 @@ public enum EnumRank {
 	public void setRankPrefix(String rankPrefix) {
 		this.rankPrefix = rankPrefix;
 	}
-
 
 }

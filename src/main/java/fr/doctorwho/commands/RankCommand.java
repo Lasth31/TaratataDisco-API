@@ -56,21 +56,21 @@ public class RankCommand implements CommandExecutor {
 	 */
 	public void setRankTarget(Player player,Player target,String rankName){
 		if(!hasRankExist(player, rankName)){
-			player.sendMessage(EnumPrefix.DOCTORWHORP + "§4Le rank " + rankName + " n'existe pas");
+			player.sendMessage(EnumPrefix.DOCTORWHORP + "§aLe rank " + rankName + " n'existe pas");
 			return;
 		}
 		
 		PlayerSQL playersql = PlayerSQL.getPlayerSQL(target);
 		if(playersql == null){
-			player.sendMessage(EnumPrefix.DOCTORWHORP + "§4Le joueur " + target.getName() + " n'a pas de Database");
+			player.sendMessage(EnumPrefix.DOCTORWHORP + "§aLe joueur " + target.getName() + " n'a pas de Database");
 			return;
 		}
 		
 		playersql.setRank(EnumRank.getRank(rankName));
 		playersql.update();
 		
-		player.sendMessage(EnumPrefix.DOCTORWHORP + "Le joueur " + target.getName() + " est maintenant " + rankName);
-		target.sendMessage(EnumPrefix.DOCTORWHORP + "Le joueur " + player.getName() + " vous à mit le grade " + rankName);
+		player.sendMessage(EnumPrefix.DOCTORWHORP + "§aLe joueur " + target.getName() + " est maintenant " + rankName);
+		target.sendMessage(EnumPrefix.DOCTORWHORP + "§aLe joueur " + player.getName() + " vous à mit le grade " + rankName);
 	}
 	
 	/**

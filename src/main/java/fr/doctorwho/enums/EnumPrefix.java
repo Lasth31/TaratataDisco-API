@@ -3,14 +3,18 @@ package fr.doctorwho.enums;
 
 // Prefix Message
 public enum EnumPrefix {
+    
 
 	DOCTORWHORP("§c[§bDoctorWhoRP§c]§f ");
 	
-	String message;
+    	private String message;
 	
 	private EnumPrefix(String message) {
 		this.message = message;
 	}
+	
+
+
 
 	public String getMessage() {
 		return message;
@@ -19,4 +23,5 @@ public enum EnumPrefix {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	
 }

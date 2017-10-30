@@ -4,8 +4,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
+
+import fr.doctorwho.commands.MoneyCommand;
 import fr.doctorwho.commands.RankCommand;
 import fr.doctorwho.events.InventoryClick;
+import fr.doctorwho.events.PlayerJoin;
+import fr.doctorwho.events.PlayerQuit;
 
 
 
@@ -39,18 +43,19 @@ public class API extends JavaPlugin {
 	public void registerListener(){
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new InventoryClick(), this);
+		pm.registerEvents(new PlayerJoin(), this);
+		pm.registerEvents(new PlayerQuit(), this);
 	}
 	
 	// Getters & Setters
-
 	/**
 	 * Register All Command
 	 */
 	public void registerCommand(){
 		getCommand("rank").setExecutor(new RankCommand());
+		getCommand("money").setExecutor(new MoneyCommand());
 	}
 	
-
 	public static API getInstance(){
 		return instance;
 	}
