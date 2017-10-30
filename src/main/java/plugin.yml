@@ -1,4 +1,4 @@
-main: fr.doctorwho.dao.API
+main: fr.doctorwho.service.API
 name: DoctorWhoAPI
 version: 1.0 alpha
 authors: [Montras,Lasth]
@@ -6,3 +6,6 @@ commands:
     rank:
         description: Vous permet de mettre les grades aux joueurs
         aliases: grade 
+    money:
+        description: Vous permet de gérer votre argent
+        aliases: solde

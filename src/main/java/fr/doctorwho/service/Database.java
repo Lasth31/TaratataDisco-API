@@ -19,7 +19,7 @@ public class Database extends SQLConnection implements Runnable{
 
 	/** Reconnect to the DB every hour*/
 	public Database() {
-		super("urlbase", "host", "database", "username", "password");
+		super("jdbc:mysql://", "localhost", "doctorwho", "root", "");
 		
 		 // 20 tick * 60 Seconde * 60 minute
 		task = Bukkit.getScheduler().runTaskTimer(API.getInstance(), this, 0, 20 * 60 * 60);

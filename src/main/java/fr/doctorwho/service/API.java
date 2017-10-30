@@ -4,8 +4,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import fr.doctorwho.dao.commands.RankCommand;
+import fr.doctorwho.commands.MoneyCommand;
+import fr.doctorwho.commands.RankCommand;
 import fr.doctorwho.events.InventoryClick;
+import fr.doctorwho.events.PlayerJoin;
+import fr.doctorwho.events.PlayerQuit;
 
 
 
@@ -39,19 +42,19 @@ public class API extends JavaPlugin {
 	public void registerListener(){
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new InventoryClick(), this);
+		pm.registerEvents(new PlayerJoin(), this);
+		pm.registerEvents(new PlayerQuit(), this);
 	}
 	
-<<<<<<< HEAD:src/main/java/fr/doctorwho/service/API.java
 	// Getters & Setters
-=======
 	/**
 	 * Register All Command
 	 */
 	public void registerCommand(){
 		getCommand("rank").setExecutor(new RankCommand());
+		getCommand("money").setExecutor(new MoneyCommand());
 	}
 	
->>>>>>> 8f56e1c128c24720d3c33cbd32b9107f2b93620e:src/main/java/fr/doctorwho/dao/API.java
 	public static API getInstance(){
 		return instance;
 	}
