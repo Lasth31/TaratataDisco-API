@@ -55,6 +55,19 @@ public enum EnumRank {
 	public String getRankName() {
 		return rankName;
 	}
+	
+	/**
+	 * Gets rank
+	 * @param power the rank ID
+	 * @return Rank
+	 */
+	public static EnumRank getRank(int power) {
+		for (EnumRank rank : values()) {
+			if (power == rank.getPower())
+				return rank;
+		}
+		return null;
+	}
 
 	/**
 	 * Sets rank Name
@@ -72,20 +85,13 @@ public enum EnumRank {
 		return rankPrefix;
 	}
 
+	/**
+	 * Sets rank prefix
+	 * @param rankPrefix
+	 */
 	public void setRankPrefix(String rankPrefix) {
 		this.rankPrefix = rankPrefix;
 	}
 
-	/**
-	 * Gets rank
-	 * @param power the rank ID
-	 * @return Rank
-	 */
-	public static EnumRank getRank(int power) {
-		for (EnumRank rank : values()) {
-			if (power == rank.getPower())
-				return rank;
-		}
-		return null;
-	}
+	
 }

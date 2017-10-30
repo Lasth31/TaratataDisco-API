@@ -1,4 +1,4 @@
-package fr.doctorwho.dao;
+package fr.doctorwho.service;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -34,19 +34,31 @@ public class API extends JavaPlugin {
 		database.disconnect();
 	}
 	
-	/**
-	 * Register All Events
-	 */
+	/** Register All Events  */
 	public void registerListener(){
 		PluginManager pm = Bukkit.getPluginManager();
 		pm.registerEvents(new InventoryClick(), this);
 	}
 	
+	// Getters & Setters
 	public static API getInstance(){
 		return instance;
 	}
-
-	public static Database getDataBase() {
-		return database;
+	
+	public static void setInstance(API instance) {
+	    API.instance = instance;
 	}
+		
+	public static Database getDatabase() {
+	    return database;
+	}
+	
+	public static void setDatabase(Database database) {
+	    API.database = database;
+	}
+
+
+	
+	
+	
 }

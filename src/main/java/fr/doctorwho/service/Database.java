@@ -1,4 +1,4 @@
-package fr.doctorwho.dao;
+package fr.doctorwho.service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
