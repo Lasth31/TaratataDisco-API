@@ -1,4 +1,4 @@
-package fr.doctorwho.dao.commands;
+package fr.doctorwho.commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
@@ -6,9 +6,9 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import fr.doctorwho.dao.PlayerSQL;
 import fr.doctorwho.enums.EnumPrefix;
 import fr.doctorwho.enums.EnumRank;
+import fr.doctorwho.service.PlayerSQL;
 
 public class RankCommand implements CommandExecutor {
 

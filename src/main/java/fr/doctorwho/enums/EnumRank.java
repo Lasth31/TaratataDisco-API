@@ -67,10 +67,31 @@ public enum EnumRank {
 	 * @return Rank
 	 */
 	public static EnumRank getRank(int power) {
-		for (EnumRank rank : values()) {
+		for (EnumRank rank : values())
+		{
 			if (power == rank.getPower())
+			{
 				return rank;
+			}
 		}
+		
+		return null;
+	}
+	
+	/**
+	 * Gets rank
+	 * @param rankName the rank Name
+	 * @return Rank
+	 */
+	public static EnumRank getRank(String rankName) {
+		for (EnumRank rank : values())
+		{
+			if (rank.getRankName().equalsIgnoreCase(rankName))
+			{
+				return rank;
+			}
+		}
+		
 		return null;
 	}
 
@@ -98,33 +119,5 @@ public enum EnumRank {
 		this.rankPrefix = rankPrefix;
 	}
 
-<<<<<<< HEAD
-	
-=======
-	/**
-	 * Gets rank
-	 * @param power the rank ID
-	 * @return Rank
-	 */
-	public static EnumRank getRank(int power) {
-		for (EnumRank rank : values()) {
-			if (power == rank.getPower())
-				return rank;
-		}
-		return null;
-	}
-	
-	/**
-	 * Gets rank
-	 * @param rankName the rank Name
-	 * @return Rank
-	 */
-	public static EnumRank getRank(String rankName) {
-		for (EnumRank rank : values()) {
-			if (rank.getRankName().equalsIgnoreCase(rankName))
-				return rank;
-		}
-		return null;
-	}
->>>>>>> 8f56e1c128c24720d3c33cbd32b9107f2b93620e
+
 }
