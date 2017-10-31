@@ -5,22 +5,22 @@ import org.bukkit.ChatColor;
 // Rank List
 public enum EnumRank {
 
-	JOUEUR(0, "joueur", "\u00A77",ChatColor.GRAY),
-	PREMIUM(10, "premium", "\u00A77[\u00A7aPrenium\u00A77]\u00A77",ChatColor.GRAY),
-	PREMIUMPLUS(20, "premiumPlus","\u00A77[\u00A7bPrenium\u00A7d✩\u00A77]\u00A77",ChatColor.GRAY),
-	VIDEASTE(30, "videaste", "\u00A78[\u00A73Vidéaste\u00A78]\u00A73",ChatColor.DARK_AQUA),
-	SCENARISTE(40, "scenariste", "\u00A78[\u00A7eScénariste\u00A78]\u00A7e",ChatColor.DARK_PURPLE),
-	GRAPHISTE(50,"graphiste", "\u00A78[§5Graphiste\u00A78]§5",ChatColor.GREEN),
-	GUIDE(60, "guide", "\u00A78[\u00A7aGuide\u00A78]\u00A7a",ChatColor.DARK_GREEN),
-	BUILDER(70, "builder","\u00A78[\u00A76Builder\u00A78]\u00A76",ChatColor.GOLD),
-	DEVELOPPEUR(70,"developpeur"," \u00A78[&dDev\u00A78]\u00A7d",ChatColor.LIGHT_PURPLE),
-	RESPONSABLESCENARISTE(80, "respscenariste", "\u00A78[\u00A7bResp.Scénariste\u00A78]\u00A7b",ChatColor.AQUA),
-	RESPONSABLEGUIDE(80, "respguide", "\u00A78[\u00A7bResp.Guide\u00A78]\u00A7b",ChatColor.AQUA),
-	RESPONSABLEMODO(80, "respmodo", "\u00A78[\u00A7bResp.Modo\u00A78]\u00A7b",ChatColor.AQUA),
-	RESPONSABLEBUILD(80, "respbuild", "\u00A78[\u00A7bResp.Build\u00A78]\u00A7b",ChatColor.AQUA),
-	RESPONSABLEDEV(80, "respdev", "\u00A78[\u00A7bResp.Dev\u00A78]\u00A7b",ChatColor.AQUA),
-	CM(90, "community-manager","\u00A78[\u00A79C.Manager\u00A78]\u00A79",ChatColor.BLUE),
-	ADMINISTRATEUR(100, "administrateur", "\u00A78[\u00A7cAdmin\u00A78]\u00A7c",ChatColor.RED);
+	JOUEUR(0, "joueur", "§7",ChatColor.GRAY), 
+	PREMIUM(10, "premium", "§7[§aPrenium§7]§7",ChatColor.GRAY), 
+	PREMIUMPLUS(20, "premiumPlus","§7[§bPrenium§d✩§7]§7",ChatColor.GRAY), 
+	VIDEASTE(30, "videaste", "§8[§3Vidéaste§8]§3",ChatColor.DARK_AQUA), 
+	SCENARISTE(40, "scenariste", "§8[§eScénariste§8]§e",ChatColor.DARK_PURPLE), 
+	GRAPHISTE(50,"graphiste", "§8[§5Graphiste§8]§5",ChatColor.GREEN), 
+	GUIDE(60, "guide", "§8[§aGuide§8]§a",ChatColor.DARK_GREEN), 
+	BUILDER(70, "builder","§8[§6Builder§8]§6",ChatColor.GOLD), 
+	DEVELOPPEUR(70,"developpeur"," §8[§dDev§8]§d",ChatColor.LIGHT_PURPLE), 
+	RESPONSABLESCENARISTE(80, "respdev", "§8[§bResp.Scénariste§8]§b",ChatColor.AQUA), 
+	RESPONSABLEGUIDE(80, "respdev", "§8[§bResp.Guide§8]§b",ChatColor.AQUA), 
+	RESPONSABLEMODO(80, "respdev", "§8[§bResp.Modo§8]§b",ChatColor.AQUA), 
+	RESPONSABLEBUILD(80, "respdev", "§8[§bResp.Build§8]§b",ChatColor.AQUA), 
+	RESPONSABLEDEV(80, "respdev", "§8[§bResp.Dev§8]§b",ChatColor.AQUA), 
+	CM(90, "community-manager","§8[§9C.Manager§8]§9",ChatColor.BLUE), 
+	ADMINISTRATEUR(100, "administrateur", "§8[§cAdmin§8]§c",ChatColor.RED); 
 
 	int power;
 
@@ -118,6 +118,14 @@ public enum EnumRank {
 	 */
 	public void setRankPrefix(String rankPrefix) {
 		this.rankPrefix = rankPrefix;
+	}
+
+	public ChatColor getChatColor() {
+		return chatColor;
+	}
+
+	public void setChatColor(ChatColor chatColor) {
+		this.chatColor = chatColor;
 	}
 
 }

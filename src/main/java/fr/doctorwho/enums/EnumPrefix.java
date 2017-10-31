@@ -5,7 +5,7 @@ package fr.doctorwho.enums;
 public enum EnumPrefix {
     
 
-	DOCTORWHORP("§c[§bDoctorWhoRP§c]§f ");
+	DOCTORWHORP("Â§c[Â§bDoctorWhoRPÂ§c]Â§f ");
 	
     	private String message;
 	

@@ -8,6 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import fr.doctorwho.commands.MoneyCommand;
 import fr.doctorwho.commands.RankCommand;
 import fr.doctorwho.events.InventoryClick;
+import fr.doctorwho.events.PlayerChat;
 import fr.doctorwho.events.PlayerJoin;
 import fr.doctorwho.events.PlayerQuit;
 
@@ -46,6 +47,7 @@ public class API extends JavaPlugin {
 		pm.registerEvents(new InventoryClick(), this);
 		pm.registerEvents(new PlayerJoin(), this);
 		pm.registerEvents(new PlayerQuit(), this);
+		pm.registerEvents(new PlayerChat(), this);
 	}
 	
 	// Getters & Setters
