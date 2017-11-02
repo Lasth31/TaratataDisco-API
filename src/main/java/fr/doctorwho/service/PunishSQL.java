@@ -83,7 +83,7 @@ public class PunishSQL {
 	 * @param target
 	 * @param ID
 	 */
-	public void delete(PlayerSQL target,int ID)
+	public void delete(int ID)
 	{
 		try
 		{

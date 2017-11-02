@@ -4,9 +4,14 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-
+import fr.doctorwho.commands.BanCommand;
 import fr.doctorwho.commands.MoneyCommand;
+import fr.doctorwho.commands.MuteCommand;
 import fr.doctorwho.commands.RankCommand;
+import fr.doctorwho.commands.TempBanCommand;
+import fr.doctorwho.commands.TempMuteCommand;
+import fr.doctorwho.commands.UnBanCommand;
+import fr.doctorwho.commands.UnMuteCommand;
 import fr.doctorwho.events.InventoryClick;
 import fr.doctorwho.events.PlayerChat;
 import fr.doctorwho.events.PlayerJoin;
@@ -57,6 +62,12 @@ public class API extends JavaPlugin {
 	public void registerCommand(){
 		getCommand("rank").setExecutor(new RankCommand());
 		getCommand("money").setExecutor(new MoneyCommand());
+		getCommand("ban").setExecutor(new BanCommand());
+		getCommand("tempban").setExecutor(new TempBanCommand());
+		getCommand("unban").setExecutor(new UnBanCommand());
+		getCommand("mute").setExecutor(new MuteCommand());
+		getCommand("tempmute").setExecutor(new TempMuteCommand());
+		getCommand("unmute").setExecutor(new UnMuteCommand());
 	}
 	
 	public static API getInstance(){

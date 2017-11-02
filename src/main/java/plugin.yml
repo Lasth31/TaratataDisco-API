@@ -9,3 +9,15 @@ commands:
     money:
         description: Vous permet de gérer votre argent
         aliases: solde
+    ban:
+        description: Vous permet de gérer vos ban
+    tempban:
+        description: Vous permet de gérer vos ban
+    unban:
+        description: Vous permet de gérer vos ban
+    mute:
+        description: Vous permet de gérer vos mute
+    tempmute:
+        description: Vous permet de gérer vos mute
+    unmute:
+        description: Vous permet de gérer vos mute

@@ -49,7 +49,7 @@ public class PlayerJoin implements Listener {
 		}
 		
 		if(System.currentTimeMillis() >= punish.getEndMillis(punish.getEnd())){
-			punish.delete(sql, punish.getID());
+			punish.delete(punish.getID());
 			return;
 		}
 		
