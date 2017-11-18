@@ -19,7 +19,7 @@ public class Database extends SQLConnection implements Runnable{
 
 	/** Reconnect to the DB every hour*/
 	public Database() {
-		super("jdbc:mysql://", "localhost", "doctorwho", "root", "");
+		super("jdbc:mysql://", "localhost", "doctorwho", "oons", "BdjrUjd1fd");
 		
 		 // 20 tick * 60 Seconde * 60 minute
 		task = Bukkit.getScheduler().runTaskTimer(API.getInstance(), this, 0, 20 * 60 * 60);
@@ -40,7 +40,7 @@ public class Database extends SQLConnection implements Runnable{
 			PreparedStatement ps = prepareStatement("SELECT " + nameID + " FROM " + table);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()){
-				value = rs.getInt("id");
+				value = rs.getInt(nameID);
 			}
 			ps.close();
 		}catch(SQLException e){

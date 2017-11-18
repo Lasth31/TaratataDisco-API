@@ -1,6 +1,7 @@
 package fr.doctorwho.service;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -39,10 +40,24 @@ public class API extends JavaPlugin {
 		
 		registerListener();
 		registerCommand();
+		
+		if(Bukkit.getOnlinePlayers().size() == 0) return;
+		
+		for(Player player : Bukkit.getOnlinePlayers()){
+			PlayerSQL.createAccount(player);
+			PlayerSQL playersql = PlayerSQL.getPlayerSQL(player);
+			PlayerSQL.playersql.put(player, playersql);
+		}
 	}
 	
 	@Override
 	public void onDisable() {
+		if(Bukkit.getOnlinePlayers().size() == 0) return;
+		
+		for(Player player : Bukkit.getOnlinePlayers()){
+			PlayerSQL.playersql.get(player).update();
+		}
+		
 		database.disconnect();
 	}
 	

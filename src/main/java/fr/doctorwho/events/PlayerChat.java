@@ -37,7 +37,7 @@ public class PlayerChat implements Listener {
 			event.setCancelled(true);
 		}
 		
-		event.setFormat(playersql.getRank().getRankPrefix() + player.getName() + " §f " + playersql.getRank().getChatColor() + message);
+		event.setFormat(playersql.getRank().getRankPrefix() + player.getName() + " :§f " + message);
 	}
 	
 	

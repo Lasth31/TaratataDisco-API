@@ -26,7 +26,7 @@ public class RankCommand implements CommandExecutor {
 		}
 		
 		// Detect IF Player is Admin
-		if(PlayerSQL.playersql.get(player) == null || PlayerSQL.playersql.get(player).getRank() != EnumRank.ADMINISTRATEUR){
+		if(PlayerSQL.playersql.get(player) == null || PlayerSQL.playersql.get(player).getRank().getPower() < EnumRank.CM.getPower()){
 			player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§4Vous n'avez pas la permission de exécuter la commande");
 			return true;
 		}
@@ -60,14 +60,13 @@ public class RankCommand implements CommandExecutor {
 			return;
 		}
 		
-		PlayerSQL playersql = PlayerSQL.getPlayerSQL(target);
+		PlayerSQL playersql = PlayerSQL.playersql.get(target);
 		if(playersql == null){
-			player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aLe joueur " + target.getName() + " n'a pas de Database");
+			player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aLe joueur " + target.getName() + " n'est pas en ligne");
 			return;
 		}
 		
 		playersql.setRank(EnumRank.getRank(rankName));
-		playersql.update();
 		
 		player.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aLe joueur " + target.getName() + " est maintenant " + rankName);
 		target.sendMessage(EnumPrefix.DOCTORWHORP.getMessage() + "§aLe joueur " + player.getName() + " vous à mit le grade " + rankName);
