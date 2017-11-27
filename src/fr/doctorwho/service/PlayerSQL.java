@@ -17,16 +17,18 @@ public class PlayerSQL{
     	private String pseudo;
     	private EnumRank rank;
     	private int coins;	
+    	private String quetes;
 	// Map contenant le player ainsi que son SQL
 	public static Map<Player, PlayerSQL> playersql = new HashMap<Player, PlayerSQL>();
 
 	// Parametric Constructor
-	public PlayerSQL(int ID,String uuid, String pseudo, EnumRank rank,int coins) {
+	public PlayerSQL(int ID,String uuid, String pseudo, EnumRank rank,int coins,String quetes) {
 		this.ID = ID;
 		this.uuid = uuid;
 		this.pseudo = pseudo;
 		this.rank = rank;
 		this.coins = coins;
+		this.quetes = quetes;
 	}
 		
 	// Non-Parametric Constructor
@@ -94,7 +96,7 @@ public class PlayerSQL{
 				
 				while(rs.next())
 				{
-					playersql = new PlayerSQL(rs.getInt("userID"),rs.getString("uuid"),player.getName(),EnumRank.getRank(rs.getInt("rank")), rs.getInt("coins"));
+					playersql = new PlayerSQL(rs.getInt("userID"),rs.getString("uuid"),player.getName(),EnumRank.getRank(rs.getInt("rank")), rs.getInt("coins"),rs.getString("quetes"));
 				}
 				
 				p.close();
@@ -112,11 +114,12 @@ public class PlayerSQL{
 		public void update() {
 		    int num = 1;
 		    try {
-			PreparedStatement ps = API.getDatabase().prepareStatement("UPDATE players SET pseudo = ?, rank = ?, coins = ? WHERE uuid = ?");
+			PreparedStatement ps = API.getDatabase().prepareStatement("UPDATE players SET pseudo = ?, rank = ?, coins = ?,quetes = ? WHERE uuid = ?");
 				
 			ps.setString(num++, pseudo);
 			ps.setInt(num++, rank.getPower());
 			ps.setInt(num++, coins);
+			ps.setString(num++, quetes);
 			ps.setString(num++, uuid);
 			ps.executeUpdate();
 			ps.close();
@@ -181,5 +184,13 @@ public class PlayerSQL{
 		public void removeCoins(int amount){
 			this.coins -= amount;
 			if(coins < 0) this.coins = 0;
+		}
+
+		public String getQuetes() {
+			return quetes;
+		}
+
+		public void setQuetes(String quetes) {
+			this.quetes = quetes;
 		}
 	}
